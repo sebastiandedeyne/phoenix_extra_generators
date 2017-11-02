@@ -20,9 +20,10 @@ defmodule PhoenixExtraGenerators.MixProject do
     ]
   end
 
-  # Run "mix help compile.app" to learn about applications.
   def application do
-    []
+    [
+      applications: [:phoenix]
+    ]
   end
 
   defp package do
@@ -35,10 +36,9 @@ defmodule PhoenixExtraGenerators.MixProject do
     ]
   end
 
-  # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:phoenix, "~> 1.3.0", only: :dev}
+      {:phoenix, "~> 1.3.0"}
     ]
   end
 end
