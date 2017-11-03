@@ -9,7 +9,7 @@ mix phx.gen.view         # Generates a Phoenix view
 
 ## Installation
 
-The package can be installed by adding `phoenix_extra_generators` to your list of dependencies in `mix.exs`. You'll probably only want to include it in dev:
+Add `phoenix_extra_generators` to your list of dependencies in `mix.exs`. You'll probably only want to include it in dev:
 
 ```elixir
 def deps do
@@ -19,7 +19,11 @@ def deps do
 end
 ```
 
-That's it! The additional mix commands are ready for use.
+## Usage
+
+Once the package is installed, the additional mix commands are ready for use.
+
+For additional documentation on the commands, use `mix help <command>` or browse the docs on [HexDocs](https://hexdocs.pm/phoenix_extra_generators).
 
 ## Changelog
 
