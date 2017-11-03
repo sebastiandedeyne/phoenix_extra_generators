@@ -1,5 +1,9 @@
 # PhoenixExtraGenerators
 
+[![Hex.pm](https://img.shields.io/hexpm/v/phoenix_extra_generators.svg)](https://hex.pm/packages/phoenix_extra_generators)
+[![Hex.pm](https://img.shields.io/hexpm/dt/phoenix_extra_generators.svg)](https://hex.pm/packages/phoenix_extra_generators)
+[![Travis](https://img.shields.io/travis/sebastiandedeyne/phoenix_extra_generators.svg)](https://travis-ci.org/sebastiandedeyne/phoenix_extra_generators)
+
 Provides extra generator commands for [Phoenix](http://phoenixframework.org/).
 
 ```
