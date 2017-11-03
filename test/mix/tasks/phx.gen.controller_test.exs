@@ -35,12 +35,12 @@ defmodule Mix.Tasks.Phx.Gen.ControllerTest do
     in_tmp_umbrella_project "generates controllers", fn ->
       Application.put_env(:phoenix, :generators, context_app: {:another_app, "another_app"})
       Gen.Controller.run ["posts"]
-      assert_file "lib/phoenix/controllers/posts_controller.ex", fn file ->
+      assert_file "lib/phoenix_extra_generators_web/controllers/posts_controller.ex", fn file ->
         assert file =~ ~S|defmodule PhoenixExtraGeneratorsWeb.PostsController do|
         assert file =~ ~S|use PhoenixExtraGeneratorsWeb, :controller|
       end
 
-      assert_file "test/phoenix/controllers/posts_controller_test.exs", fn file ->
+      assert_file "test/phoenix_extra_generators_web/controllers/posts_controller_test.exs", fn file ->
         assert file =~ ~S|defmodule PhoenixExtraGeneratorsWeb.PostsControllerTest|
         assert file =~ ~S|use PhoenixExtraGeneratorsWeb.ConnCase|
         assert file =~ ~S|alias PhoenixExtraGeneratorsWeb.PostsController|

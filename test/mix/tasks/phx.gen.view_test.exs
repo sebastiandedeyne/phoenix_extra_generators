@@ -27,8 +27,8 @@ defmodule Mix.Tasks.Phx.Gen.ViewTest do
   test "in an umbrella with a context_app, generates the files" do
     in_tmp_umbrella_project "generates views", fn ->
       Application.put_env(:phoenix, :generators, context_app: {:another_app, "another_app"})
-      Gen.View.run ["posts"]
-      assert_file "lib/phoenix/views/posts_view.ex", fn file ->
+      Gen.View.run ["Posts"]
+      assert_file "lib/phoenix_extra_generators_web/views/posts_view.ex", fn file ->
         assert file =~ ~S|defmodule PhoenixExtraGeneratorsWeb.PostsView do|
         assert file =~ ~S|use PhoenixExtraGeneratorsWeb, :view|
       end
