@@ -29,7 +29,7 @@ defmodule PhoenixExtraGenerators.MixProject do
   defp package do
     [
       name: :phoenix_extra_generators,
-      files: ["lib", "priv", "mix.exs", "README.md", "LICENSE.md"],
+      files: ["lib", "priv", "mix.exs", "README.md", "LICENSE"],
       maintainers: ["Sebastian De Deyne"],
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/sebastiandedeyne/phoenix_extra_generators"}
