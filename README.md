@@ -45,6 +45,8 @@ Pull requests are welcome!
 
 ## Credits
 
+The generators are based on the code distributed in the [Phoenix framework](https://github.com/phoenixframework/phoenix).
+
 - [Sebastian De Deyne](https://github.com/sebastiandedeyne)
 - [All Contributors](../../contributors)
 
