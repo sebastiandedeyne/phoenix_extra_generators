@@ -1,6 +1,6 @@
 Code.require_file "../../mix_helper.exs", __DIR__
 
-defmodule PhoenixWeb.DupView do
+defmodule PhoenixExtraGeneratorsWeb.DupView do
 end
 
 defmodule Mix.Tasks.Phx.Gen.ViewTest do
@@ -17,9 +17,9 @@ defmodule Mix.Tasks.Phx.Gen.ViewTest do
     in_tmp_project "generates view", fn ->
       Gen.View.run ["Posts"]
 
-      assert_file "lib/phoenix_web/views/posts_view.ex", fn file ->
-        assert file =~ ~S|defmodule PhoenixWeb.PostsView do|
-        assert file =~ ~S|use PhoenixWeb, :view|
+      assert_file "lib/phoenix_extra_generators_web/views/posts_view.ex", fn file ->
+        assert file =~ ~S|defmodule PhoenixExtraGeneratorsWeb.PostsView do|
+        assert file =~ ~S|use PhoenixExtraGeneratorsWeb, :view|
       end
     end
   end
@@ -29,8 +29,8 @@ defmodule Mix.Tasks.Phx.Gen.ViewTest do
       Application.put_env(:phoenix, :generators, context_app: {:another_app, "another_app"})
       Gen.View.run ["posts"]
       assert_file "lib/phoenix/views/posts_view.ex", fn file ->
-        assert file =~ ~S|defmodule PhoenixWeb.PostsView do|
-        assert file =~ ~S|use PhoenixWeb, :view|
+        assert file =~ ~S|defmodule PhoenixExtraGeneratorsWeb.PostsView do|
+        assert file =~ ~S|use PhoenixExtraGeneratorsWeb, :view|
       end
     end
   end
@@ -39,9 +39,9 @@ defmodule Mix.Tasks.Phx.Gen.ViewTest do
     in_tmp_project "generates nested view", fn ->
       Gen.View.run ["Admin.Posts"]
 
-      assert_file "lib/phoenix_web/views/admin/posts_view.ex", fn file ->
-        assert file =~ ~S|defmodule PhoenixWeb.Admin.PostsView do|
-        assert file =~ ~S|use PhoenixWeb, :view|
+      assert_file "lib/phoenix_extra_generators_web/views/admin/posts_view.ex", fn file ->
+        assert file =~ ~S|defmodule PhoenixExtraGeneratorsWeb.Admin.PostsView do|
+        assert file =~ ~S|use PhoenixExtraGeneratorsWeb, :view|
       end
     end
   end

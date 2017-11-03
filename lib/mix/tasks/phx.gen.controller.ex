@@ -59,6 +59,6 @@ defmodule Mix.Tasks.Phx.Gen.Controller do
   end
 
   defp paths do
-    [".", :phoenix]
+    [".", :phoenix_extra_generators]
   end
 end

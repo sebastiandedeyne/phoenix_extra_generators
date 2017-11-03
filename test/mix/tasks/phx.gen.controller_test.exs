@@ -1,6 +1,6 @@
 Code.require_file "../../mix_helper.exs", __DIR__
 
-defmodule PhoenixWeb.DupController do
+defmodule PhoenixExtraGeneratorsWeb.DupController do
 end
 
 defmodule Mix.Tasks.Phx.Gen.ControllerTest do
@@ -13,19 +13,20 @@ defmodule Mix.Tasks.Phx.Gen.ControllerTest do
     :ok
   end
 
+  @tag :current
   test "generates controller" do
     in_tmp_project "generates controller", fn ->
       Gen.Controller.run ["Posts"]
 
-      assert_file "lib/phoenix_web/controllers/posts_controller.ex", fn file ->
-        assert file =~ ~S|defmodule PhoenixWeb.PostsController do|
-        assert file =~ ~S|use PhoenixWeb, :controller|
+      assert_file "lib/phoenix_extra_generators_web/controllers/posts_controller.ex", fn file ->
+        assert file =~ ~S|defmodule PhoenixExtraGeneratorsWeb.PostsController do|
+        assert file =~ ~S|use PhoenixExtraGeneratorsWeb, :controller|
       end
 
-      assert_file "test/phoenix_web/controllers/posts_controller_test.exs", fn file ->
-        assert file =~ ~S|defmodule PhoenixWeb.PostsControllerTest|
-        assert file =~ ~S|use PhoenixWeb.ConnCase|
-        assert file =~ ~S|alias PhoenixWeb.PostsController|
+      assert_file "test/phoenix_extra_generators_web/controllers/posts_controller_test.exs", fn file ->
+        assert file =~ ~S|defmodule PhoenixExtraGeneratorsWeb.PostsControllerTest|
+        assert file =~ ~S|use PhoenixExtraGeneratorsWeb.ConnCase|
+        assert file =~ ~S|alias PhoenixExtraGeneratorsWeb.PostsController|
       end
     end
   end
@@ -35,14 +36,14 @@ defmodule Mix.Tasks.Phx.Gen.ControllerTest do
       Application.put_env(:phoenix, :generators, context_app: {:another_app, "another_app"})
       Gen.Controller.run ["posts"]
       assert_file "lib/phoenix/controllers/posts_controller.ex", fn file ->
-        assert file =~ ~S|defmodule PhoenixWeb.PostsController do|
-        assert file =~ ~S|use PhoenixWeb, :controller|
+        assert file =~ ~S|defmodule PhoenixExtraGeneratorsWeb.PostsController do|
+        assert file =~ ~S|use PhoenixExtraGeneratorsWeb, :controller|
       end
 
       assert_file "test/phoenix/controllers/posts_controller_test.exs", fn file ->
-        assert file =~ ~S|defmodule PhoenixWeb.PostsControllerTest|
-        assert file =~ ~S|use PhoenixWeb.ConnCase|
-        assert file =~ ~S|alias PhoenixWeb.PostsController|
+        assert file =~ ~S|defmodule PhoenixExtraGeneratorsWeb.PostsControllerTest|
+        assert file =~ ~S|use PhoenixExtraGeneratorsWeb.ConnCase|
+        assert file =~ ~S|alias PhoenixExtraGeneratorsWeb.PostsController|
       end
     end
   end
@@ -51,15 +52,15 @@ defmodule Mix.Tasks.Phx.Gen.ControllerTest do
     in_tmp_project "generates nested controller", fn ->
       Gen.Controller.run ["Admin.Posts"]
 
-      assert_file "lib/phoenix_web/controllers/admin/posts_controller.ex", fn file ->
-        assert file =~ ~S|defmodule PhoenixWeb.Admin.PostsController do|
-        assert file =~ ~S|use PhoenixWeb, :controller|
+      assert_file "lib/phoenix_extra_generators_web/controllers/admin/posts_controller.ex", fn file ->
+        assert file =~ ~S|defmodule PhoenixExtraGeneratorsWeb.Admin.PostsController do|
+        assert file =~ ~S|use PhoenixExtraGeneratorsWeb, :controller|
       end
 
-      assert_file "test/phoenix_web/controllers/admin/posts_controller_test.exs", fn file ->
-        assert file =~ ~S|defmodule PhoenixWeb.Admin.PostsControllerTest|
-        assert file =~ ~S|use PhoenixWeb.ConnCase|
-        assert file =~ ~S|alias PhoenixWeb.Admin.PostsController|
+      assert_file "test/phoenix_extra_generators_web/controllers/admin/posts_controller_test.exs", fn file ->
+        assert file =~ ~S|defmodule PhoenixExtraGeneratorsWeb.Admin.PostsControllerTest|
+        assert file =~ ~S|use PhoenixExtraGeneratorsWeb.ConnCase|
+        assert file =~ ~S|alias PhoenixExtraGeneratorsWeb.Admin.PostsController|
       end
     end
   end
