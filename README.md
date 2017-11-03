@@ -6,6 +6,8 @@
 
 Provides extra generator commands for [Phoenix](http://phoenixframework.org/).
 
+Two new commands will be available in your Phoenix app:
+
 ```
 mix phx.gen.controller   # Generates a Phoenix controller
 mix phx.gen.view         # Generates a Phoenix view
